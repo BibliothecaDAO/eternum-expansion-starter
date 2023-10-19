@@ -1,0 +1,10 @@
+{ 
+    "<DECLARED_SYSTEM_ADDRESS>": [
+        "Resource",
+        "Position",
+        "Owner",
+        "Movable",
+        "ArrivalTime",
+        "Capacity"
+    ]
+}
