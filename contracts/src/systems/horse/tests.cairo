@@ -58,7 +58,7 @@ fn test_create_horse() {
         1, // wonder
         1, // order
         Position { 
-            x: 500200,  // x needs to be > 470200 to get zone
+            x: 500200,
             y: 1, 
             entity_id:0 // this is immaterial
         }, 
@@ -88,20 +88,25 @@ fn test_create_horse() {
     };
 
     // create horse
-    let horse_id = horse_systems_dispatcher.create_horse(
+    let horse_entity_id = horse_systems_dispatcher.create_horse(
         world,
         realm_entity_id,
     );
 
 
     let (owner, capacity, position, movable) 
-        = get!(world, horse_id, (Owner, Capacity, Position, Movable));
+        = get!(world, horse_entity_id, (Owner, Capacity, Position, Movable));
 
     assert(owner.address == entity_address, 'wrong owner');
     assert(movable.sec_per_km == HORSE_SPEED_SEC_PER_KM, 'wrong speed');
     assert(position.x == 500200, 'wrong x');
     assert(position.y == 1, 'wrong y');
     assert(capacity.weight_gram == HORSE_CAPACITY_GRAMS, 'wrong capacity');
+
+    // check resource balance
+    let resource = get!(world, (realm_entity_id, ResourceTypes::WHEAT), Resource);
+    let balance: u128 = 100_000_000 - 10_000_000;
+    assert(resource.balance == balance, 'wrong balance');
 }
 
 
