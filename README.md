@@ -14,8 +14,6 @@ curl -L https://install.dojoengine.org | bash
 
 Read the dojo book [here](https://book.dojoengine.org/index.html) to discover the toolchain in depth.
 
-⚠️ Warning: Current version of eternum uses dojo v0.3.0-rc8, we're in the process of migating to the official 0.3.0 release. For now, please install v0.3.0-rc8 to sozo build using `dojoup --version v0.3.0-rc8`.
-
 ## Updating the remote eternum world
 
 1. In contracts directory, add your new models/systems
