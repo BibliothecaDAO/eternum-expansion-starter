@@ -7,7 +7,7 @@ version = "0.0.1"
 sierra-replace-ids = true
 
 [dependencies]
-dojo = { git = "https://github.com/dojoengine/dojo", tag="v0.3.0-rc8" }
+dojo = { git = "https://github.com/dojoengine/dojo", tag="v0.3.0" }
 eternum = { git = "https://github.com/BibliothecaDAO/eternum.git" }
 
 [tool.dojo.env]
